@@ -1,0 +1,6 @@
+spring:
+  datasource:
+    url: jdbc:sap://10.253.93.93:30041/?currentschema=DATABASE
+    username: SBSS_91778008305556001143322286249678765862014565021912763169361671565
+    password: h7LuixuP4GD5qCG.MHfbI3vRHqRPiDYqZuOB4eXgmaz92jHA9cT-IxFNQh3mIOnBqtOSs8Y69.grGsWRvh2TZznGfV2ubUlc2UxX25zc-HHbaygWQ6JAJH3xU4uO_j5
+    driver-class-name: com.sap.db.jdbc.Driver

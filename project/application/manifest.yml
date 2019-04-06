@@ -1,0 +1,7 @@
+applications:
+- name: application
+  instances: 1
+  host: application
+  path: target/application-0.0.1-SNAPSHOT.jar
+  services:  - application-hdidatabase2-P2000591021R9d8KzJ23UiCSG
+  

@@ -1,0 +1,47 @@
+ID: application
+_schema-version: '2.1'
+version: 0.0.1
+
+modules:
+ 
+
+
+ - name: application
+   type: java
+   path: application
+   parameters:
+      memory: 512M
+   provides:
+    - name: application_api
+      properties:
+         url: ${default-url}
+   requires:
+    - name: hdi_database
+      properties:
+         JBP_CONFIG_RESOURCE_CONFIGURATION: '[tomcat/webapps/ROOT/META-INF/context.xml:
+            {"service_name_for_DefaultDB" : "~{hdi-container-name}"}]'
+
+
+ - name: database
+   type: hdb
+   path: database
+   requires:
+    - name: hdi_database_2
+
+resources:
+ - name: hdi_database
+   parameters:
+      config:
+         schema: database
+   properties:
+      hdi-container-name: ${service-name}
+   type: com.sap.xs.hdi-container
+
+ - name: hdi_database_2
+   parameters:
+      config:
+         schema: database
+   properties:
+      hdi-container-name_2: ${service-name}
+   type: com.sap.xs.hdi-container
+
